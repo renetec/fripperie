@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Friperie Saint-Pacôme - Faites de bonnes affaires tout en soutenant votre communauté. Les profits aident l'église locale.">
+    <title>Friperie Saint-Pacôme | Aubaines & Solidarité</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           VIBRANT FRIPERIE SAINT-PACÔME
+           Social, Energetic, Community-Focused
+           ======================================== */
+
+        :root {
+            /* Vibrant Social Color Palette */
+            --color-coral: #FF6B6B;          /* Energetic coral */
+            --color-coral-light: #FF8E8E;    /* Light coral */
+            --color-coral-dark: #E85555;     /* Dark coral */
+            --color-teal: #4ECDC4;           /* Fresh teal */
+            --color-teal-light: #7EDDD7;     /* Light teal */
+            --color-teal-dark: #3DBBB3;      /* Dark teal */
+            --color-yellow: #FFD93D;         /* Sunny yellow */
+            --color-yellow-light: #FFE066;   /* Light yellow */
+            --color-purple: #9B59B6;         /* Friendly purple */
+            --color-purple-light: #B07CC9;   /* Light purple */
+            --color-orange: #FF9F43;         /* Warm orange */
+            --color-pink: #FF6B9D;           /* Playful pink */
+            --color-white: #FFFFFF;
+            --color-cream: #FFF9F5;          /* Warm white */
+            --color-light-bg: #F8FAFC;       /* Light background */
+            --color-charcoal: #2D3748;       /* Dark text */
+            --color-gray: #718096;           /* Gray text */
+            --color-light-gray: #E2E8F0;     /* Light gray */
+            
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, rgba(255, 107, 107, 0.88) 0%, rgba(158, 89, 182, 0.82) 100%);
+            --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+            --gradient-teal: linear-gradient(135deg, #4ECDC4 0%, #7EDDD7 100%);
+            --gradient-sunset: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 50%, #4ECDC4 100%);
+            --gradient-purple: linear-gradient(135deg, #9B59B6 0%, #B07CC9 100%);
+            
+            /* Typography */
+            --font-display: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            
+            /* Border Radius */
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
+            --shadow-coral: 0 10px 40px rgba(255, 107, 107, 0.4);
+            --shadow-teal: 0 10px 40px rgba(78, 205, 196, 0.4);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-cream);
+            color: var(--color-charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--space-lg);
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            background-image: url('picture/church-fixed.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+            z-index: 1;
+        }
+
+        .hero-blobs {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--color-yellow);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--color-teal);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -3s;
+        }
+
+        .blob-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--color-pink);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--color-yellow);
+            color: var(--color-charcoal);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+            box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4);
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(255, 217, 61, 0.6); }
+        }
+
+        .hero-badge::before {
+            content: '✨';
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            color: var(--color-white);
+            line-height: 1;
+            margin-bottom: var(--space-md);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-title span {
+            background: var(--gradient-sunset);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: rgba(255,255,255,0.95);
+            font-weight: 400;
+            max-width: 650px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .hero-tagline strong {
+            color: var(--color-yellow);
+            font-weight: 600;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-yellow);
+            color: var(--color-charcoal);
+            box-shadow: 0 8px 30px rgba(255, 217, 61, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 217, 61, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            color: var(--color-white);
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-4px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: var(--space-lg);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .hero-scroll svg {
+            width: 40px;
+            height: 40px;
+            color: var(--color-white);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* ========================================
+           FLOATING INFO CARDS
+           ======================================== */
+        .hero-cards {
+            position: absolute;
+            bottom: var(--space-xl);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 var(--space-md);
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.98);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md) var(--space-lg);
+            box-shadow: var(--shadow-lg);
+            min-width: 300px;
+            max-width: 380px;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        .info-card.coral::before { background: var(--gradient-coral); }
+        .info-card.teal::before { background: var(--gradient-teal); }
+
+        .info-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .info-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.75rem;
+        }
+
+        .info-card.coral .info-card-icon {
+            background: var(--gradient-coral);
+        }
+
+        .info-card.teal .info-card-icon {
+            background: var(--gradient-teal);
+        }
+
+        .info-card-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+        }
+
+        .info-card-content {
+            color: var(--color-gray);
+            font-size: 0.95rem;
+        }
+
+        .hours-list {
+            list-style: none;
+            margin-top: var(--space-sm);
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-xs) 0;
+            border-bottom: 2px dashed var(--color-light-gray);
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            font-weight: 600;
+            color: var(--color-charcoal);
+        }
+
+        .hours-time {
+            font-family: var(--font-display);
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+        }
+
+        .info-card.coral .hours-time {
+            background: rgba(255, 107, 107, 0.15);
+            color: var(--color-coral);
+        }
+
+        .info-card.teal .hours-time {
+            background: rgba(78, 205, 196, 0.15);
+            color: var(--color-teal-dark);
+        }
+
+        .address-text {
+            font-style: normal;
+            line-height: 1.8;
+            color: var(--color-charcoal);
+        }
+
+        .address-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gradient-purple);
+            color: var(--color-white);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: var(--space-xs);
+        }
+
+        /* ========================================
+           MISSION SECTION WITH IMAGE
+           ======================================== */
+        .mission {
+            padding: var(--space-2xl) var(--space-lg);
+            background: var(--color-white);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--gradient-coral);
+            color: var(--color-white);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-md);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-gray);
+        }
+
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .mission-image {
+            position: relative;
+        }
+
+        .mission-image img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mission-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--gradient-coral);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+        }
+
+        .mission-cards {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .mission-card {
+            background: var(--color-cream);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+            transition: all var(--transition-base);
+            border-left: 5px solid transparent;
+        }
+
+        .mission-card:nth-child(1) { border-left-color: var(--color-coral); }
+        .mission-card:nth-child(2) { border-left-color: var(--color-teal); }
+        .mission-card:nth-child(3) { border-left-color: var(--color-purple); }
+
+        .mission-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mission-card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .mission-card:nth-child(1) .mission-card-icon { background: rgba(255, 107, 107, 0.15); }
+        .mission-card:nth-child(2) .mission-card-icon { background: rgba(78, 205, 196, 0.15); }
+        .mission-card:nth-child(3) .mission-card-icon { background: rgba(155, 89, 182, 0.15); }
+
+        .mission-card-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-xs);
+        }
+
+        .mission-card-content p {
+            color: var(--color-gray);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           IMPACT STATS
+           ======================================== */
+        .impact {
+            padding: var(--space-xl) var(--space-lg);
+            background: var(--gradient-sunset);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-item {
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+            display: block;
+        }
+
+        .impact-number {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .impact-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* ========================================
+           GALLERY SECTION
+           ======================================== */
+        .gallery {
+            padding: var(--space-2xl) var(--space-lg);
+            background: var(--color-cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-base);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-md);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: var(--color-white);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            padding: var(--space-2xl) var(--space-lg);
+            background: var(--color-charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-decoration {
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            animation: rotate-slow 20s linear infinite;
+        }
+
+        .cta-decoration-1 {
+            top: -50px;
+            left: -50px;
+        }
+
+        .cta-decoration-2 {
+            bottom: -50px;
+            right: -50px;
+            animation-direction: reverse;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            color: var(--color-white);
+            margin-bottom: var(--space-md);
+            font-weight: 800;
+        }
+
+        .cta-title span {
+            color: var(--color-yellow);
+        }
+
+        .cta-text {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            background: var(--gradient-coral);
+            color: var(--color-white);
+            box-shadow: var(--shadow-coral);
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--color-white);
+            transform: translateY(-4px);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: rgba(255,255,255,0.7);
+            padding: var(--space-xl) var(--space-lg);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--space-xl);
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-white);
+            margin-bottom: var(--space-sm);
+            font-weight: 700;
+        }
+
+        .footer-tagline {
+            color: var(--color-coral-light);
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-desc {
+            line-height: 1.8;
+            max-width: 350px;
+        }
+
+        .footer-section h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-hours {
+            list-style: none;
+        }
+
+        .footer-hours li {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-hours li span:last-child {
+            color: var(--color-teal-light);
+            font-weight: 600;
+        }
+
+        .footer-address {
+            font-style: normal;
+            line-height: 1.9;
+        }
+
+        .footer-address strong {
+            color: var(--color-white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: var(--space-xl) auto 0;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom span {
+            color: var(--color-yellow);
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-image {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item.featured {
+                grid-column: span 2;
+                grid-row: span 1;
+                aspect-ratio: 16/9;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-cards {
+                position: relative;
+                bottom: auto;
+                transform: none;
+                margin-top: var(--space-xl);
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-bottom: var(--space-lg);
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+            }
+
+            .hero-scroll {
+                display: none;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .impact-number {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item.featured {
+                grid-column: span 1;
+                aspect-ratio: 4/3;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-desc {
+                max-width: 100%;
+            }
+
+            .mission-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mission-card:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* ========================================
+           ACCESSIBILITY
+           ======================================== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--color-coral);
+            outline-offset: 3px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">Nouveau à Saint-Pacôme</div>
+            <h1 class="hero-title">Friperie <span>Saint-Pacôme</span></h1>
+            <p class="hero-tagline">
+                Faites de <strong>bonnes affaires</strong> tout en soutenant votre communauté ! 
+                Chaque achat contribue à préserver notre magnifique église.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#mission" class="btn btn-primary">
+                    Découvrir notre mission
+                    <span>→</span>
+                </a>
+                <a href="#heures" class="btn btn-secondary">
+                    Voir les horaires
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-cards" id="heures">
+            <!-- Hours Card -->
+            <div class="info-card coral">
+                <div class="info-card-header">
+                    <div class="info-card-icon">⏰</div>
+                    <h2 class="info-card-title">Heures d'ouverture</h2>
+                </div>
+                <div class="info-card-content">
+                    <ul class="hours-list">
+                        <li class="hours-item">
+                            <span class="hours-day">Jeudi</span>
+                            <span class="hours-time">15h - 19h</span>
+                        </li>
+                        <li class="hours-item">
+                            <span class="hours-day">Vendredi</span>
+                            <span class="hours-time">15h - 19h</span>
+                        </li>
+                        <li class="hours-item">
+                            <span class="hours-day">Samedi</span>
+                            <span class="hours-time">14h - 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="info-card teal">
+                <div class="info-card-header">
+                    <div class="info-card-icon">📍</div>
+                    <h2 class="info-card-title">Nous trouver</h2>
+                </div>
+                <div class="info-card-content">
+                    <address class="address-text">
+                        <strong>222, boulevard Bégin</strong><br>
+                        Saint-Pacôme, Québec
+                        <span class="address-highlight">
+                            ⛪ À l'Église
+                        </span>
+                    </address>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-label">Notre Engagement</span>
+                <h2 class="section-title">Une friperie qui fait la différence</h2>
+                <p class="section-subtitle">
+                    La Friperie Saint-Pacôme est bien plus qu'un simple commerce. 
+                    C'est un projet de solidarité pour préserver le cœur de notre village.
+                </p>
+            </header>
+
+            <div class="mission-content">
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800" alt="Vêtements colorés en friperie">
+                </div>
+
+                <div class="mission-cards">
+                    <article class="mission-card">
+                        <div class="mission-card-icon">🔥</div>
+                        <div class="mission-card-content">
+                            <h3>Chauffage</h3>
+                            <p>Les profits contribuent au financement du système de chauffage de l'église, assurant un lieu chaleureux pour les célébrations et événements communautaires.</p>
+                        </div>
+                    </article>
+
+                    <article class="mission-card">
+                        <div class="mission-card-icon">🔧</div>
+                        <div class="mission-card-content">
+                            <h3>Réparations</h3>
+                            <p>Vos achats permettent d'effectuer les réparations nécessaires à la préservation de ce joyau architectural du patrimoine de Saint-Pacôme.</p>
+                        </div>
+                    </article>
+
+                    <article class="mission-card">
+                        <div class="mission-card-icon">💚</div>
+                        <div class="mission-card-content">
+                            <h3>Solidarité</h3>
+                            <p>Un geste écologique et solidaire : donnez une seconde vie aux vêtements tout en soutenant votre communauté locale.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT STATS -->
+    <section class="impact">
+        <div class="container">
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <span class="impact-icon">🤝</span>
+                    <div class="impact-number">100%</div>
+                    <div class="impact-label">Bénévole</div>
+                </div>
+                <div class="impact-item">
+                    <span class="impact-icon">📅</span>
+                    <div class="impact-number">3×</div>
+                    <div class="impact-label">Par semaine</div>
+                </div>
+                <div class="impact-item">
+                    <span class="impact-icon">💰</span>
+                    <div class="impact-number">$</div>
+                    <div class="impact-label">Prix modiques</div>
+                </div>
+                <div class="impact-item">
+                    <span class="impact-icon">♻️</span>
+                    <div class="impact-number">🌱</div>
+                    <div class="impact-label">Écologique</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-label">L'Ambiance</span>
+                <h2 class="section-title">Un lieu convivial et chaleureux</h2>
+                <p class="section-subtitle">
+                    Venez découvrir une sélection unique de vêtements dans une atmosphère accueillante, 
+                    au cœur de notre belle église.
+                </p>
+            </header>
+
+            <div class="gallery-grid">
+                <div class="gallery-item featured">
+                    <img src="picture/church-fixed.jpg" alt="Église de Saint-Pacôme">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Notre magnifique église de Saint-Pacôme</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600" alt="Shopping en friperie">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Ambiance conviviale</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="picture/church-background-fixed.jpg" alt="Détails de l'église">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Le clocher historique</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600" alt="Expérience shopping">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Faire de bonnes affaires</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <span class="cta-decoration cta-decoration-1">💛</span>
+        <span class="cta-decoration cta-decoration-2">🤝</span>
+        
+        <div class="cta-content">
+            <h2 class="cta-title">Ensemble, <span>préservons</span> notre église</h2>
+            <p class="cta-text">
+                Que vous cherchiez une pièce unique ou que vous souhaitiez contribuer à la préservation 
+                de notre patrimoine, chaque visite compte. Rejoignez-nous !
+            </p>
+            <div class="cta-buttons">
+                <a href="#heures" class="btn btn-cta-primary">
+                    📍 Visiter la friperie
+                </a>
+                <a href="#" class="btn btn-cta-secondary" onclick="alert('Contactez-nous sur place ou rejoignez-nous sur Facebook!'); return false;">
+                    💬 Nous contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">Friperie Saint-Pacôme</div>
+                <p class="footer-tagline">Viens faire ton tour, de super aubaines t'attendent!</p>
+                <p class="footer-desc">
+                    Une initiative du comité de Saint-Pacôme pour préserver notre patrimoine 
+                    religieux tout en offrant une alternative écologique et abordable à la mode.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>🕐 Heures</h4>
+                <ul class="footer-hours">
+                    <li><span>Jeudi</span> <span>15h - 19h</span></li>
+                    <li><span>Vendredi</span> <span>15h - 19h</span></li>
+                    <li><span>Samedi</span> <span>14h - 18h</span></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>📍 Adresse</h4>
+                <address class="footer-address">
+                    <strong>222, boulevard Bégin</strong><br>
+                    Saint-Pacôme, Québec<br>
+                    <em>(À l'intérieur de l'Église)</em>
+                </address>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Friperie Saint-Pacôme — Fait avec <span>💛</span> par le Comité pour l'église de Saint-Pacôme</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for fade-in animation
+        document.querySelectorAll('.mission-card, .gallery-item, .impact-item').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

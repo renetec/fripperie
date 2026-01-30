@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/rene/fripperie/logs/.793290e6760fa9e48584792937922fe0c2c3885a-audit.json",
+    "files": [
+        {
+            "date": 1767986872129,
+            "name": "/home/rene/fripperie/logs/mcp-puppeteer-2026-01-09.log",
+            "hash": "74f4ee4ada98441db1bd467c74a5d6644da8e6f1a3bf181d0b29e8486d987065"
+        }
+    ],
+    "hashType": "sha256"
+}
