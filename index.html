@@ -18,32 +18,33 @@
            ======================================== */
 
         :root {
-            /* Vibrant Social Color Palette */
-            --color-coral: #FF6B6B;          /* Energetic coral */
-            --color-coral-light: #FF8E8E;    /* Light coral */
-            --color-coral-dark: #E85555;     /* Dark coral */
-            --color-teal: #4ECDC4;           /* Fresh teal */
-            --color-teal-light: #7EDDD7;     /* Light teal */
-            --color-teal-dark: #3DBBB3;      /* Dark teal */
-            --color-yellow: #FFD93D;         /* Sunny yellow */
-            --color-yellow-light: #FFE066;   /* Light yellow */
-            --color-purple: #9B59B6;         /* Friendly purple */
-            --color-purple-light: #B07CC9;   /* Light purple */
-            --color-orange: #FF9F43;         /* Warm orange */
-            --color-pink: #FF6B9D;           /* Playful pink */
+            /* Logo-Based Color Palette - Caring & Community */
+            --color-forest-green: #297221;      /* Primary green from logo */
+            --color-forest-green-light: #3C7E44; /* Light forest green */
+            --color-forest-green-dark: #1a4d14;  /* Dark forest green */
+            --color-sky-blue: #A6D0E5;          /* Heart blue from logo */
+            --color-sky-blue-light: #C5E3F3;    /* Light sky blue */
+            --color-sky-blue-dark: #7AB8D3;     /* Darker sky blue */
+            --color-teal: #72A894;              /* Hanger teal from logo */
+            --color-teal-light: #97BEAA;        /* Light teal */
+            --color-teal-dark: #5A8877;         /* Dark teal */
+            --color-soft-yellow: #FFE5A0;       /* Soft yellow accent */
+            --color-soft-yellow-light: #FFF0C2; /* Light yellow */
+            --color-coral-peach: #FF8B7B;       /* Warm coral for CTAs */
+            --color-coral-peach-light: #FFA694; /* Light coral */
             --color-white: #FFFFFF;
-            --color-cream: #FFF9F5;          /* Warm white */
-            --color-light-bg: #F8FAFC;       /* Light background */
-            --color-charcoal: #2D3748;       /* Dark text */
-            --color-gray: #718096;           /* Gray text */
-            --color-light-gray: #E2E8F0;     /* Light gray */
-            
+            --color-cream: #FFF9F5;             /* Warm background */
+            --color-light-bg: #F8FAFC;          /* Light background */
+            --color-charcoal: #2D3748;          /* Dark text */
+            --color-gray: #718096;              /* Gray text */
+            --color-light-gray: #E2E8F0;        /* Light gray */
+
             /* Gradients */
-            --gradient-hero: linear-gradient(135deg, rgba(255, 107, 107, 0.88) 0%, rgba(158, 89, 182, 0.82) 100%);
-            --gradient-coral: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
-            --gradient-teal: linear-gradient(135deg, #4ECDC4 0%, #7EDDD7 100%);
-            --gradient-sunset: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 50%, #4ECDC4 100%);
-            --gradient-purple: linear-gradient(135deg, #9B59B6 0%, #B07CC9 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(41, 114, 33, 0.75) 0%, rgba(166, 208, 229, 0.70) 100%);
+            --gradient-green: linear-gradient(135deg, #297221 0%, #3C7E44 100%);
+            --gradient-teal: linear-gradient(135deg, #72A894 0%, #97BEAA 100%);
+            --gradient-nature: linear-gradient(135deg, #297221 0%, #A6D0E5 50%, #72A894 100%);
+            --gradient-sky: linear-gradient(135deg, #A6D0E5 0%, #C5E3F3 100%);
             
             /* Typography */
             --font-display: 'Poppins', sans-serif;
@@ -67,8 +68,9 @@
             --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
             --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
             --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
-            --shadow-coral: 0 10px 40px rgba(255, 107, 107, 0.4);
-            --shadow-teal: 0 10px 40px rgba(78, 205, 196, 0.4);
+            --shadow-green: 0 10px 40px rgba(41, 114, 33, 0.3);
+            --shadow-blue: 0 10px 40px rgba(166, 208, 229, 0.4);
+            --shadow-teal: 0 10px 40px rgba(114, 168, 148, 0.3);
             
             /* Transitions */
             --transition-fast: 0.2s ease;
@@ -92,6 +94,74 @@
             color: var(--color-charcoal);
             line-height: 1.7;
             overflow-x: hidden;
+        }
+
+        /* ========================================
+           HEADER/NAVIGATION
+           ======================================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: var(--space-sm) var(--space-lg);
+            transition: all var(--transition-base);
+        }
+
+        .site-header.scrolled {
+            padding: var(--space-xs) var(--space-lg);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .site-logo {
+            height: 80px;
+            transition: all var(--transition-base);
+        }
+
+        .site-header.scrolled .site-logo {
+            height: 60px;
+        }
+
+        .hero-logo {
+            width: 250px;
+            max-width: 90%;
+            animation: fadeInScale 1s ease-out;
+            position: absolute;
+            top: -5vh;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hero-text-content {
+            margin-top: 20vh;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .footer-logo {
+            height: 80px;
+            margin-bottom: var(--space-sm);
         }
 
         /* ========================================
@@ -143,7 +213,7 @@
         .blob-1 {
             width: 400px;
             height: 400px;
-            background: var(--color-yellow);
+            background: var(--color-sky-blue);
             top: -100px;
             left: -100px;
             animation-delay: 0s;
@@ -161,7 +231,7 @@
         .blob-3 {
             width: 250px;
             height: 250px;
-            background: var(--color-pink);
+            background: var(--color-forest-green-light);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -179,6 +249,10 @@
             z-index: 10;
             max-width: 900px;
             animation: fadeInUp 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-xl);
         }
 
         @keyframes fadeInUp {
@@ -196,8 +270,8 @@
             display: inline-flex;
             align-items: center;
             gap: var(--space-xs);
-            background: var(--color-yellow);
-            color: var(--color-charcoal);
+            background: var(--color-cream);
+            color: var(--color-forest-green);
             padding: var(--space-xs) var(--space-md);
             border-radius: var(--radius-full);
             font-size: 0.875rem;
@@ -205,13 +279,13 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: var(--space-md);
-            box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4);
+            box-shadow: 0 4px 15px rgba(41, 114, 33, 0.3);
             animation: pulse-badge 2s ease-in-out infinite;
         }
 
         @keyframes pulse-badge {
-            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(255, 217, 61, 0.6); }
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(41, 114, 33, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(41, 114, 33, 0.4); }
         }
 
         .hero-badge::before {
@@ -221,7 +295,7 @@
         .hero-title {
             font-family: var(--font-display);
             font-size: clamp(3rem, 10vw, 6rem);
-            font-weight: 800;
+            font-weight: 700;
             color: var(--color-white);
             line-height: 1;
             margin-bottom: var(--space-md);
@@ -229,7 +303,7 @@
         }
 
         .hero-title span {
-            background: var(--gradient-sunset);
+            background: var(--gradient-nature);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -244,7 +318,7 @@
         }
 
         .hero-tagline strong {
-            color: var(--color-yellow);
+            color: var(--color-soft-yellow);
             font-weight: 600;
         }
 
@@ -271,14 +345,14 @@
         }
 
         .btn-primary {
-            background: var(--color-yellow);
-            color: var(--color-charcoal);
-            box-shadow: 0 8px 30px rgba(255, 217, 61, 0.4);
+            background: var(--color-forest-green);
+            color: var(--color-white);
+            box-shadow: var(--shadow-green);
         }
 
         .btn-primary:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(255, 217, 61, 0.5);
+            box-shadow: 0 15px 40px rgba(41, 114, 33, 0.5);
         }
 
         .btn-secondary {
@@ -315,21 +389,22 @@
         }
 
         /* ========================================
-           FLOATING INFO CARDS
+           INFO CARDS SECTION
            ======================================== */
+        .info-cards-section {
+            padding: var(--space-xl) var(--space-lg);
+            background: var(--color-white);
+            margin-top: calc(-1 * var(--space-xl));
+            position: relative;
+            z-index: 20;
+        }
+
         .hero-cards {
-            position: absolute;
-            bottom: var(--space-xl);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
             display: flex;
             gap: var(--space-md);
             flex-wrap: wrap;
             justify-content: center;
-            width: 100%;
-            max-width: 1200px;
-            padding: 0 var(--space-md);
+            align-items: flex-start;
         }
 
         .info-card {
@@ -353,7 +428,7 @@
             height: 5px;
         }
 
-        .info-card.coral::before { background: var(--gradient-coral); }
+        .info-card.coral::before { background: var(--gradient-green); }
         .info-card.teal::before { background: var(--gradient-teal); }
 
         .info-card:hover {
@@ -380,7 +455,7 @@
         }
 
         .info-card.coral .info-card-icon {
-            background: var(--gradient-coral);
+            background: var(--gradient-green);
         }
 
         .info-card.teal .info-card-icon {
@@ -430,12 +505,12 @@
         }
 
         .info-card.coral .hours-time {
-            background: rgba(255, 107, 107, 0.15);
-            color: var(--color-coral);
+            background: rgba(41, 114, 33, 0.15);
+            color: var(--color-forest-green);
         }
 
         .info-card.teal .hours-time {
-            background: rgba(78, 205, 196, 0.15);
+            background: rgba(114, 168, 148, 0.15);
             color: var(--color-teal-dark);
         }
 
@@ -449,7 +524,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: var(--gradient-purple);
+            background: var(--gradient-teal);
             color: var(--color-white);
             padding: 6px 14px;
             border-radius: var(--radius-full);
@@ -480,7 +555,7 @@
 
         .section-label {
             display: inline-block;
-            background: var(--gradient-coral);
+            background: var(--gradient-green);
             color: var(--color-white);
             font-weight: 700;
             font-size: 0.8rem;
@@ -494,8 +569,8 @@
         .section-title {
             font-family: var(--font-display);
             font-size: clamp(2.25rem, 5vw, 3.5rem);
-            font-weight: 800;
-            color: var(--color-charcoal);
+            font-weight: 700;
+            color: var(--color-forest-green);
             margin-bottom: var(--space-md);
             line-height: 1.2;
         }
@@ -529,7 +604,7 @@
             left: 20px;
             right: -20px;
             bottom: -20px;
-            background: var(--gradient-coral);
+            background: var(--gradient-green);
             border-radius: var(--radius-lg);
             z-index: -1;
         }
@@ -551,9 +626,9 @@
             border-left: 5px solid transparent;
         }
 
-        .mission-card:nth-child(1) { border-left-color: var(--color-coral); }
-        .mission-card:nth-child(2) { border-left-color: var(--color-teal); }
-        .mission-card:nth-child(3) { border-left-color: var(--color-purple); }
+        .mission-card:nth-child(1) { border-left-color: var(--color-forest-green); }
+        .mission-card:nth-child(2) { border-left-color: var(--color-sky-blue); }
+        .mission-card:nth-child(3) { border-left-color: var(--color-teal); }
 
         .mission-card:hover {
             transform: translateX(10px);
@@ -571,9 +646,9 @@
             flex-shrink: 0;
         }
 
-        .mission-card:nth-child(1) .mission-card-icon { background: rgba(255, 107, 107, 0.15); }
-        .mission-card:nth-child(2) .mission-card-icon { background: rgba(78, 205, 196, 0.15); }
-        .mission-card:nth-child(3) .mission-card-icon { background: rgba(155, 89, 182, 0.15); }
+        .mission-card:nth-child(1) .mission-card-icon { background: rgba(41, 114, 33, 0.15); }
+        .mission-card:nth-child(2) .mission-card-icon { background: rgba(166, 208, 229, 0.15); }
+        .mission-card:nth-child(3) .mission-card-icon { background: rgba(114, 168, 148, 0.15); }
 
         .mission-card-content h3 {
             font-family: var(--font-display);
@@ -593,7 +668,7 @@
            ======================================== */
         .impact {
             padding: var(--space-xl) var(--space-lg);
-            background: var(--gradient-sunset);
+            background: var(--gradient-nature);
             position: relative;
             overflow: hidden;
         }
@@ -712,7 +787,7 @@
            ======================================== */
         .cta-section {
             padding: var(--space-2xl) var(--space-lg);
-            background: var(--color-charcoal);
+            background: linear-gradient(135deg, #1a3d0a 0%, #297221 100%);
             position: relative;
             overflow: hidden;
         }
@@ -753,11 +828,11 @@
             font-size: clamp(2.25rem, 5vw, 3.5rem);
             color: var(--color-white);
             margin-bottom: var(--space-md);
-            font-weight: 800;
+            font-weight: 700;
         }
 
         .cta-title span {
-            color: var(--color-yellow);
+            color: var(--color-sky-blue);
         }
 
         .cta-text {
@@ -774,25 +849,25 @@
         }
 
         .btn-cta-primary {
-            background: var(--gradient-coral);
-            color: var(--color-white);
-            box-shadow: var(--shadow-coral);
+            background: var(--gradient-sky);
+            color: var(--color-charcoal);
+            box-shadow: var(--shadow-blue);
         }
 
         .btn-cta-primary:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 15px 40px rgba(166, 208, 229, 0.5);
         }
 
         .btn-cta-secondary {
             background: transparent;
             color: var(--color-white);
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid var(--color-sky-blue);
         }
 
         .btn-cta-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--color-white);
+            background: rgba(166, 208, 229, 0.2);
+            border-color: var(--color-sky-blue-light);
             transform: translateY(-4px);
         }
 
@@ -800,7 +875,7 @@
            FOOTER
            ======================================== */
         footer {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            background: linear-gradient(135deg, #1a3d0a 0%, #297221 100%);
             color: rgba(255,255,255,0.7);
             padding: var(--space-xl) var(--space-lg);
         }
@@ -822,7 +897,7 @@
         }
 
         .footer-tagline {
-            color: var(--color-coral-light);
+            color: var(--color-sky-blue);
             font-style: italic;
             font-size: 1.1rem;
             margin-bottom: var(--space-md);
@@ -854,7 +929,7 @@
         }
 
         .footer-hours li span:last-child {
-            color: var(--color-teal-light);
+            color: var(--color-soft-yellow);
             font-weight: 600;
         }
 
@@ -877,7 +952,7 @@
         }
 
         .footer-bottom span {
-            color: var(--color-yellow);
+            color: var(--color-sky-blue);
         }
 
         /* ========================================
@@ -915,10 +990,6 @@
 
         @media (max-width: 768px) {
             .hero-cards {
-                position: relative;
-                bottom: auto;
-                transform: none;
-                margin-top: var(--space-xl);
                 flex-direction: column;
                 align-items: center;
             }
@@ -1034,62 +1105,22 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-badge">Nouveau à Saint-Pacôme</div>
-            <h1 class="hero-title">Friperie <span>Saint-Pacôme</span></h1>
-            <p class="hero-tagline">
-                Faites de <strong>bonnes affaires</strong> tout en soutenant votre communauté ! 
-                Chaque achat contribue à préserver notre magnifique église.
-            </p>
-            <div class="hero-cta-group">
-                <a href="#mission" class="btn btn-primary">
-                    Découvrir notre mission
-                    <span>→</span>
-                </a>
-                <a href="#heures" class="btn btn-secondary">
-                    Voir les horaires
-                </a>
-            </div>
-        </div>
-
-        <div class="hero-cards" id="heures">
-            <!-- Hours Card -->
-            <div class="info-card coral">
-                <div class="info-card-header">
-                    <div class="info-card-icon">⏰</div>
-                    <h2 class="info-card-title">Heures d'ouverture</h2>
-                </div>
-                <div class="info-card-content">
-                    <ul class="hours-list">
-                        <li class="hours-item">
-                            <span class="hours-day">Jeudi</span>
-                            <span class="hours-time">15h - 19h</span>
-                        </li>
-                        <li class="hours-item">
-                            <span class="hours-day">Vendredi</span>
-                            <span class="hours-time">15h - 19h</span>
-                        </li>
-                        <li class="hours-item">
-                            <span class="hours-day">Samedi</span>
-                            <span class="hours-time">14h - 18h</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Location Card -->
-            <div class="info-card teal">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📍</div>
-                    <h2 class="info-card-title">Nous trouver</h2>
-                </div>
-                <div class="info-card-content">
-                    <address class="address-text">
-                        <strong>222, boulevard Bégin</strong><br>
-                        Saint-Pacôme, Québec
-                        <span class="address-highlight">
-                            ⛪ À l'Église
-                        </span>
-                    </address>
+            <img src="picture/friperie-transparent.png" alt="Friperie 222" class="hero-logo">
+            <div class="hero-text-content">
+                <h1 class="hero-title">Friperie <span>Saint-Pacôme</span></h1>
+                <div class="hero-badge">Nouveau à Saint-Pacôme</div>
+                <p class="hero-tagline">
+                    Faites de <strong>bonnes affaires</strong> tout en soutenant votre communauté !
+                    Chaque achat contribue à préserver notre magnifique église.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#mission" class="btn btn-primary">
+                        Découvrir notre mission
+                        <span>→</span>
+                    </a>
+                    <a href="#heures" class="btn btn-secondary">
+                        Voir les horaires
+                    </a>
                 </div>
             </div>
         </div>
@@ -1098,6 +1129,54 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
+        </div>
+    </section>
+
+    <!-- INFO CARDS SECTION -->
+    <section class="info-cards-section" id="heures">
+        <div class="container">
+            <div class="hero-cards">
+                <!-- Hours Card -->
+                <div class="info-card coral">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">⏰</div>
+                        <h2 class="info-card-title">Heures d'ouverture</h2>
+                    </div>
+                    <div class="info-card-content">
+                        <ul class="hours-list">
+                            <li class="hours-item">
+                                <span class="hours-day">Jeudi</span>
+                                <span class="hours-time">15h - 19h</span>
+                            </li>
+                            <li class="hours-item">
+                                <span class="hours-day">Vendredi</span>
+                                <span class="hours-time">15h - 19h</span>
+                            </li>
+                            <li class="hours-item">
+                                <span class="hours-day">Samedi</span>
+                                <span class="hours-time">14h - 18h</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Location Card -->
+                <div class="info-card teal">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">📍</div>
+                        <h2 class="info-card-title">Nous trouver</h2>
+                    </div>
+                    <div class="info-card-content">
+                        <address class="address-text">
+                            <strong>222, boulevard Bégin</strong><br>
+                            Saint-Pacôme, Québec
+                            <span class="address-highlight">
+                                ⛪ À l'Église
+                            </span>
+                        </address>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1242,6 +1321,7 @@
     <footer>
         <div class="footer-content">
             <div>
+                <img src="picture/friperie-transparent.png" alt="Friperie 222" class="footer-logo">
                 <div class="footer-brand">Friperie Saint-Pacôme</div>
                 <p class="footer-tagline">Viens faire ton tour, de super aubaines t'attendent!</p>
                 <p class="footer-desc">
@@ -1270,11 +1350,21 @@
         </div>
         
         <div class="footer-bottom">
-            <p>© 2026 Friperie Saint-Pacôme — Fait avec <span>💛</span> par le Comité pour l'église de Saint-Pacôme</p>
+            <p>© 2026 Friperie Saint-Pacôme — Fait avec <span>💚</span> par le Comité pour l'église de Saint-Pacôme</p>
         </div>
     </footer>
 
     <script>
+        // Header scroll effect
+        const header = document.querySelector('.site-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
